@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Suicide Rate Forecasting — Time-series forecasting with ARIMA and Prophet for public health resource allocation.">
+  <title>Suicide Rate Forecasting | Karthik Mettu</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/4473ecc91f70f139-s.p.woff') format('woff');font-weight:400}
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/463dafcda517f24f-s.p.woff') format('woff');font-weight:500}
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/7cba1811e3c25a15-s.p.woff2') format('woff2');font-weight:700}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav-links"><a href="../index.html">Home</a><a href="../index.html#projects" class="active">Projects</a><a href="../index.html#contact">Contact</a></nav>
+  <div class="header-right"><div class="theme-toggle" id="themeToggle"><div class="ball"></div></div></div>
+</header>
+
+<main>
+  <section class="project-hero visible">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#projects">Projects</a> / Suicide Rate Forecasting</div>
+    <h1>Suicide Rate Forecasting</h1>
+    <div class="oneliner">Public health decisions need data, not guesswork.</div>
+    <div class="meta-row">
+      <span class="tag">Time Series</span>
+      <span class="tag">Prophet</span>
+      <span class="tag">ARIMA</span>
+      <span class="tag">Public Health</span>
+    </div>
+    <div class="cta-row">
+      <a href="https://github.com/karthik1636/Portfolio" target="_blank" class="btn-primary">View on GitHub</a>
+    </div>
+  </section>
+
+  <section class="story-section visible">
+    <h2>The <span class="ac">Problem</span></h2>
+    <p>Suicide is the <strong>12th leading cause of death</strong> in the United States, claiming over 49,000 lives annually. Mental health organizations and governments allocate crisis resources &mdash; hotlines, counselors, treatment centers &mdash; but often reactively, after trends have already worsened.</p>
+    <p>The question I asked: <em>Can time-series forecasting provide reliable multi-year projections to help public health agencies plan proactively instead of reactively?</em></p>
+  </section>
+
+  <section class="story-section visible">
+    <h2>The <span class="ac">Approach</span></h2>
+    <div class="pipeline-diagram">
+      <div class="pipeline-steps">
+        <div class="pipeline-step">
+          <div class="icon">&#128202;</div>
+          <div class="step-label">Collect</div>
+          <div class="step-detail">WHO + CDC data</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#128200;</div>
+          <div class="step-label">Decompose</div>
+          <div class="step-detail">Trend + seasonality</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#129520;</div>
+          <div class="step-label">Model</div>
+          <div class="step-detail">ARIMA + Prophet</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#128161;</div>
+          <div class="step-label">Forecast</div>
+          <div class="step-detail">R&sup2; = 0.85</div>
+        </div>
+      </div>
+    </div>
+    <ul>
+      <li><strong>Data Collection:</strong> Combined WHO global suicide statistics with CDC national data, covering multiple decades and demographic breakdowns</li>
+      <li><strong>Time-Series Decomposition:</strong> Separated trend, seasonality, and residual components using STL decomposition to understand underlying patterns</li>
+      <li><strong>ARIMA Modeling:</strong> Auto-ARIMA for optimal (p,d,q) parameter selection; validated stationarity with ADF test and residual diagnostics</li>
+      <li><strong>Prophet Modeling:</strong> Facebook Prophet for capturing multiple seasonality patterns and holiday effects with uncertainty quantification</li>
+      <li><strong>Demographic Analysis:</strong> Separate forecasts by age group, gender, and region to identify at-risk populations</li>
+    </ul>
+  </section>
+
+  <section class="story-section visible">
+    <h2>Key <span class="ac">Results</span></h2>
+    <div class="metrics-row">
+      <div class="metric-box"><div class="val">0.85</div><div class="lbl">R&sup2; Score</div></div>
+      <div class="metric-box"><div class="val">2</div><div class="lbl">Model Comparison</div></div>
+      <div class="metric-box"><div class="val">Multi</div><div class="lbl">Year Forecast</div></div>
+    </div>
+    <ul>
+      <li>R&sup2; = 0.85 on held-out test period, demonstrating reliable forecasting accuracy</li>
+      <li>Prophet outperformed ARIMA on datasets with strong seasonality and structural breaks</li>
+      <li>ARIMA provided tighter confidence intervals for short-horizon forecasts</li>
+      <li>Demographic breakdowns revealed disparate trends across age groups, enabling targeted intervention planning</li>
+      <li>Uncertainty intervals help planners prepare for best-case and worst-case resource needs</li>
+    </ul>
+  </section>
+
+  <div class="biz-callout">
+    <h3>Business Value</h3>
+    <p><strong>Resource Allocation:</strong> Accurate forecasts help health departments budget for crisis counselors, hotline staff, and treatment beds years in advance rather than scrambling reactively. <strong>Lives Saved:</strong> Proactive resource placement in at-risk regions can reduce response time from days to hours. <strong>Technical Transfer:</strong> The same ARIMA/Prophet framework I used here is exactly what I deployed at Accenture for demand forecasting across 60K+ SKUs.</p>
+  </div>
+
+  <section class="story-section visible">
+    <h2>Tech <span class="ac">Stack</span></h2>
+    <div class="tech-grid">
+      <span class="tech-chip">Python</span>
+      <span class="tech-chip">R</span>
+      <span class="tech-chip">Prophet</span>
+      <span class="tech-chip">statsmodels (ARIMA)</span>
+      <span class="tech-chip">Pandas</span>
+      <span class="tech-chip">Matplotlib</span>
+    </div>
+  </section>
+
+  <a href="../index.html#projects" class="back-link">&larr; Back to all projects</a>
+</main>
+<footer>&copy; 2026 Karthik Mettu</footer>
+<script>document.getElementById('themeToggle').addEventListener('click',()=>document.documentElement.classList.toggle('dark'))</script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Movie Recommender System — Content-based and collaborative filtering engine with interactive Streamlit interface.">
+  <title>Movie Recommender System | Karthik Mettu</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/4473ecc91f70f139-s.p.woff') format('woff');font-weight:400}
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/463dafcda517f24f-s.p.woff') format('woff');font-weight:500}
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/7cba1811e3c25a15-s.p.woff2') format('woff2');font-weight:700}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav-links"><a href="../index.html">Home</a><a href="../index.html#projects" class="active">Projects</a><a href="../index.html#contact">Contact</a></nav>
+  <div class="header-right"><div class="theme-toggle" id="themeToggle"><div class="ball"></div></div></div>
+</header>
+
+<main>
+  <section class="project-hero visible">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#projects">Projects</a> / Movie Recommender</div>
+    <h1>Movie Recommender System</h1>
+    <div class="oneliner">Binge Netflix? Build your own recommendation algorithm &mdash; then ship it.</div>
+    <div class="meta-row">
+      <span class="tag">Python</span>
+      <span class="tag">scikit-learn</span>
+      <span class="tag">Streamlit</span>
+      <span class="tag">Pandas</span>
+    </div>
+    <div class="cta-row">
+      <a href="https://github.com/karthik1636/movie-recommender-system" target="_blank" class="btn-primary">View on GitHub</a>
+    </div>
+  </section>
+
+  <section class="story-section visible">
+    <h2>The <span class="ac">Problem</span></h2>
+    <p>Recommendation systems drive an estimated <strong>35% of e-commerce revenue</strong> and 80% of Netflix viewing hours. But most tutorials stop at "cosine similarity on a toy dataset" without exploring what actually makes recommendations good &mdash; or building something a real user can interact with.</p>
+    <p>I wanted to go deeper: build a dual-approach system that combines content understanding with collaborative signals, and ship it as a live product people can use.</p>
+  </section>
+
+  <section class="story-section visible">
+    <h2>The <span class="ac">Approach</span></h2>
+    <div class="pipeline-diagram">
+      <div class="pipeline-steps">
+        <div class="pipeline-step">
+          <div class="icon">&#127916;</div>
+          <div class="step-label">Data</div>
+          <div class="step-detail">TMDB dataset</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#128200;</div>
+          <div class="step-label">Features</div>
+          <div class="step-detail">TF-IDF + metadata</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#129520;</div>
+          <div class="step-label">Model</div>
+          <div class="step-detail">Content + Collab</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#127760;</div>
+          <div class="step-label">Deploy</div>
+          <div class="step-detail">Streamlit app</div>
+        </div>
+      </div>
+    </div>
+    <ul>
+      <li><strong>Content-Based Filtering:</strong> TF-IDF vectorization on movie descriptions, genres, and cast, combined with cosine similarity to find movies that share characteristics with the user's favorites</li>
+      <li><strong>Collaborative Filtering:</strong> User-item interaction matrix factorization to surface patterns like "people who liked X also liked Y"</li>
+      <li><strong>Hybrid Ranking:</strong> Weighted combination of both approaches for more robust recommendations that handle cold-start gracefully</li>
+      <li><strong>Interactive Frontend:</strong> Streamlit interface where users select a movie and instantly see personalized recommendations with posters, ratings, and genres</li>
+    </ul>
+  </section>
+
+  <section class="story-section visible">
+    <h2>Key <span class="ac">Results</span></h2>
+    <div class="metrics-row">
+      <div class="metric-box"><div class="val">2</div><div class="lbl">Filtering Methods</div></div>
+      <div class="metric-box"><div class="val">5K+</div><div class="lbl">Movies Indexed</div></div>
+      <div class="metric-box"><div class="val">Live</div><div class="lbl">Streamlit Demo</div></div>
+    </div>
+    <ul>
+      <li>Content-based approach captures genre/cast similarities that collaborative filtering misses</li>
+      <li>Collaborative approach surfaces non-obvious connections between movies</li>
+      <li>Hybrid combination outperforms either approach alone on relevance metrics</li>
+      <li>Fully productionized with interactive web interface</li>
+    </ul>
+  </section>
+
+  <div class="biz-callout">
+    <h3>Business Value</h3>
+    <p><strong>Revenue Impact:</strong> Recommender systems are responsible for 35% of Amazon purchases and 80% of Netflix viewing. This project demonstrates the full pipeline from algorithm design to deployment. <strong>Passion Signal:</strong> Built this because I love movies and wanted to solve the "what to watch next" problem for myself &mdash; then shipped it so anyone can use it.</p>
+  </div>
+
+  <section class="story-section visible">
+    <h2>Tech <span class="ac">Stack</span></h2>
+    <div class="tech-grid">
+      <span class="tech-chip">Python</span>
+      <span class="tech-chip">scikit-learn</span>
+      <span class="tech-chip">Pandas</span>
+      <span class="tech-chip">NumPy</span>
+      <span class="tech-chip">Streamlit</span>
+      <span class="tech-chip">TMDB API</span>
+    </div>
+  </section>
+
+  <a href="../index.html#projects" class="back-link">&larr; Back to all projects</a>
+</main>
+<footer>&copy; 2026 Karthik Mettu</footer>
+<script>document.getElementById('themeToggle').addEventListener('click',()=>document.documentElement.classList.toggle('dark'))</script>
+</body>
+</html>

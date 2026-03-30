@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Audiobook Pipeline — A 4-stage NLP+TTS system that converts PDFs into emotionally narrated audiobooks using PyTorch, Kokoro-82M, and Ollama.">
+  <title>Audiobook Pipeline | Karthik Mettu</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/4473ecc91f70f139-s.p.woff') format('woff');font-weight:400}
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/463dafcda517f24f-s.p.woff') format('woff');font-weight:500}
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/7cba1811e3c25a15-s.p.woff2') format('woff2');font-weight:700}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav-links"><a href="../index.html">Home</a><a href="../index.html#projects" class="active">Projects</a><a href="../index.html#contact">Contact</a></nav>
+  <div class="header-right"><div class="theme-toggle" id="themeToggle"><div class="ball"></div></div></div>
+</header>
+
+<main>
+  <section class="project-hero visible">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#projects">Projects</a> / Audiobook Pipeline</div>
+    <h1>Audiobook Pipeline</h1>
+    <div class="oneliner">PDF in, emotionally narrated audiobook out &mdash; a 4-stage NLP+TTS pipeline that reads books the way humans do.</div>
+    <div class="meta-row">
+      <span class="tag">Flagship Project</span>
+      <span class="tag">PyTorch</span>
+      <span class="tag">Kokoro-82M</span>
+      <span class="tag">Ollama</span>
+      <span class="tag">Streamlit</span>
+    </div>
+    <div class="cta-row">
+      <a href="https://github.com/karthik1636/audiobook-pipeline" target="_blank" class="btn-primary">View on GitHub</a>
+      <a href="https://github.com/karthik1636/audiobook-pipeline#-quick-start" target="_blank" class="btn-secondary">Run It Yourself</a>
+    </div>
+  </section>
+
+  <section class="story-section visible">
+    <h2>The <span class="ac">Problem</span></h2>
+    <p>I love books but don't always have time to sit and read. Existing text-to-speech tools solve the "audio" part but miss something crucial: <strong>they sound robotic</strong>. A tense thriller passage gets the same flat monotone as a tender moment. The result is unlistenable for anything beyond a few minutes.</p>
+    <p>The question I asked: <em>Can I build a pipeline that reads with emotion &mdash; adjusting tone, speed, and voice character based on what the text actually says?</em></p>
+  </section>
+
+  <section class="story-section visible">
+    <h2>The <span class="ac">Approach</span></h2>
+    <p>I designed a 4-stage pipeline where each stage solves one piece of the puzzle:</p>
+
+    <div class="pipeline-diagram">
+      <div class="pipeline-steps">
+        <div class="pipeline-step">
+          <div class="icon">&#128196;</div>
+          <div class="step-label">Extract</div>
+          <div class="step-detail">pdfplumber</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#129302;</div>
+          <div class="step-label">Clean</div>
+          <div class="step-detail">Ollama LLM</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#128172;</div>
+          <div class="step-label">Emotion</div>
+          <div class="step-detail">8-class sentiment</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#127911;</div>
+          <div class="step-label">Synthesize</div>
+          <div class="step-detail">Kokoro-82M + MPS</div>
+        </div>
+      </div>
+    </div>
+
+    <ul>
+      <li><strong>Stage 1 &mdash; Extract:</strong> pdfplumber pulls raw text from any PDF, handling multi-column layouts, headers, and page numbers</li>
+      <li><strong>Stage 2 &mdash; Clean:</strong> A local LLM (via Ollama) fixes OCR artifacts, removes garbled text, and normalizes formatting without altering meaning</li>
+      <li><strong>Stage 3 &mdash; Emotion Annotate:</strong> Each sentence gets classified into one of 8 emotions (neutral, joy, sadness, anger, fear, surprise, tension, contemplative) with intensity scores, using batched Ollama inference</li>
+      <li><strong>Stage 4 &mdash; Synthesize:</strong> Kokoro-82M generates audio with emotion-aware voice blending &mdash; adjusting speaker, speed, and prosody per emotion. Runs on Apple Silicon MPS for GPU-accelerated inference</li>
+    </ul>
+  </section>
+
+  <section class="story-section visible">
+    <h2>Key <span class="ac">Results</span></h2>
+    <div class="metrics-row">
+      <div class="metric-box"><div class="val">4</div><div class="lbl">Pipeline Stages</div></div>
+      <div class="metric-box"><div class="val">8</div><div class="lbl">Emotion Classes</div></div>
+      <div class="metric-box"><div class="val">82M</div><div class="lbl">TTS Model Params</div></div>
+      <div class="metric-box"><div class="val">MPS</div><div class="lbl">GPU Accelerated</div></div>
+    </div>
+    <ul>
+      <li>Sentence-level emotion classification with JSON checkpoint/resume for long books</li>
+      <li>Tunable voice parameters per emotion (speed, speaker blend, silence padding)</li>
+      <li>Karpathy-style <strong>autoresearch framework</strong> for autonomous optimization of voice-emotion mappings</li>
+      <li>Full Streamlit GUI: upload PDF, watch progress, play audio, see color-coded emotion timeline</li>
+      <li>CLI with subcommands for each pipeline stage and full end-to-end runs</li>
+    </ul>
+  </section>
+
+  <div class="biz-callout">
+    <h3>Business Value</h3>
+    <p><strong>Accessibility:</strong> Converts any text to audio for visually impaired users. <strong>Content Production:</strong> Publishers and educators can generate narrated versions of documents at near-zero marginal cost. <strong>Technical Signal:</strong> Demonstrates end-to-end ML system design &mdash; data pipeline, model inference, GPU optimization, prompt engineering, and productionization via CLI + web app.</p>
+  </div>
+
+  <section class="story-section visible">
+    <h2>Tech <span class="ac">Stack</span></h2>
+    <div class="tech-grid">
+      <span class="tech-chip">Python 3.10+</span>
+      <span class="tech-chip">PyTorch (MPS)</span>
+      <span class="tech-chip">Kokoro-82M</span>
+      <span class="tech-chip">Ollama</span>
+      <span class="tech-chip">pdfplumber</span>
+      <span class="tech-chip">Streamlit</span>
+      <span class="tech-chip">Ruff</span>
+      <span class="tech-chip">Pytest</span>
+      <span class="tech-chip">GitHub Actions CI</span>
+    </div>
+  </section>
+
+  <a href="../index.html#projects" class="back-link">&larr; Back to all projects</a>
+</main>
+<footer>&copy; 2026 Karthik Mettu</footer>
+<script>document.getElementById('themeToggle').addEventListener('click',()=>document.documentElement.classList.toggle('dark'))</script>
+</body>
+</html>

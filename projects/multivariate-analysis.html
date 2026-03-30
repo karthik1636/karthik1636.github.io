@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Multivariate Statistical Analysis — PCA, factor analysis, and clustering applied to high-dimensional datasets for pattern discovery.">
+  <title>Multivariate Statistical Analysis | Karthik Mettu</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/4473ecc91f70f139-s.p.woff') format('woff');font-weight:400}
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/463dafcda517f24f-s.p.woff') format('woff');font-weight:500}
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/7cba1811e3c25a15-s.p.woff2') format('woff2');font-weight:700}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav-links"><a href="../index.html">Home</a><a href="../index.html#projects" class="active">Projects</a><a href="../index.html#contact">Contact</a></nav>
+  <div class="header-right"><div class="theme-toggle" id="themeToggle"><div class="ball"></div></div></div>
+</header>
+
+<main>
+  <section class="project-hero visible">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#projects">Projects</a> / Multivariate Analysis</div>
+    <h1>Multivariate Statistical Analysis</h1>
+    <div class="oneliner">50 dimensions of data. Where's the signal hiding?</div>
+    <div class="meta-row">
+      <span class="tag">Statistics</span>
+      <span class="tag">R</span>
+      <span class="tag">PCA</span>
+      <span class="tag">Clustering</span>
+    </div>
+    <div class="cta-row">
+      <a href="https://github.com/karthik1636/Portfolio/tree/main/Projects/Multivariate%20Analysis" target="_blank" class="btn-primary">View on GitHub</a>
+    </div>
+  </section>
+
+  <section class="story-section visible">
+    <h2>The <span class="ac">Problem</span></h2>
+    <p>Real-world datasets often have dozens or hundreds of features. A marketing dataset might track 50 customer attributes. A manufacturing process might log 100 sensor readings. The curse of dimensionality makes it nearly impossible to visualize, interpret, or model this data effectively.</p>
+    <p>The challenge: <em>Reduce a high-dimensional dataset to its essential structure without losing the information that matters.</em></p>
+  </section>
+
+  <section class="story-section visible">
+    <h2>The <span class="ac">Approach</span></h2>
+    <div class="pipeline-diagram">
+      <div class="pipeline-steps">
+        <div class="pipeline-step">
+          <div class="icon">&#128200;</div>
+          <div class="step-label">Explore</div>
+          <div class="step-detail">Correlation matrix</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#128269;</div>
+          <div class="step-label">PCA</div>
+          <div class="step-detail">Variance explained</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#129520;</div>
+          <div class="step-label">Factor</div>
+          <div class="step-detail">Latent structure</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#127919;</div>
+          <div class="step-label">Cluster</div>
+          <div class="step-detail">K-means + hierarchical</div>
+        </div>
+      </div>
+    </div>
+    <ul>
+      <li><strong>Exploratory Analysis:</strong> Correlation heatmaps and scatterplot matrices to identify redundant and highly correlated features</li>
+      <li><strong>PCA:</strong> Principal Component Analysis to identify the directions of maximum variance; scree plot analysis to determine optimal number of components</li>
+      <li><strong>Factor Analysis:</strong> Rotated factor loadings (varimax) to discover interpretable latent constructs underlying observed variables</li>
+      <li><strong>Cluster Analysis:</strong> K-means and hierarchical clustering on the reduced feature space to identify natural groupings in the data</li>
+    </ul>
+  </section>
+
+  <section class="story-section visible">
+    <h2>Key <span class="ac">Results</span></h2>
+    <div class="metrics-row">
+      <div class="metric-box"><div class="val">3</div><div class="lbl">Methods Applied</div></div>
+      <div class="metric-box"><div class="val">85%+</div><div class="lbl">Variance Explained</div></div>
+      <div class="metric-box"><div class="val">Clear</div><div class="lbl">Cluster Structure</div></div>
+    </div>
+    <ul>
+      <li>PCA reduced dimensionality by over 60% while retaining 85%+ of total variance</li>
+      <li>Factor analysis revealed interpretable latent constructs that aligned with domain knowledge</li>
+      <li>Cluster analysis on the reduced space produced well-separated, actionable segments</li>
+      <li>Comprehensive visualizations: biplots, dendrograms, silhouette scores, and scree plots</li>
+    </ul>
+  </section>
+
+  <div class="biz-callout">
+    <h3>Business Value</h3>
+    <p><strong>Feature Engineering Foundation:</strong> PCA and factor analysis are preprocessing steps for every ML pipeline at scale. This project demonstrates fluency with the statistical foundations that separate data scientists from script runners. <strong>Customer Segmentation:</strong> Cluster analysis directly maps to marketing segmentation, personalization, and targeted intervention &mdash; multi-billion dollar use cases at every tech company.</p>
+  </div>
+
+  <section class="story-section visible">
+    <h2>Tech <span class="ac">Stack</span></h2>
+    <div class="tech-grid">
+      <span class="tech-chip">R</span>
+      <span class="tech-chip">FactoMineR</span>
+      <span class="tech-chip">ggplot2</span>
+      <span class="tech-chip">cluster (R)</span>
+      <span class="tech-chip">corrplot</span>
+    </div>
+  </section>
+
+  <a href="../index.html#projects" class="back-link">&larr; Back to all projects</a>
+</main>
+<footer>&copy; 2026 Karthik Mettu</footer>
+<script>document.getElementById('themeToggle').addEventListener('click',()=>document.documentElement.classList.toggle('dark'))</script>
+</body>
+</html>

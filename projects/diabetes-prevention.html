@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Diabetes Risk Predictor — ML-powered early detection achieving 85% accuracy for preventive healthcare intervention.">
+  <title>Diabetes Risk Predictor | Karthik Mettu</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/4473ecc91f70f139-s.p.woff') format('woff');font-weight:400}
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/463dafcda517f24f-s.p.woff') format('woff');font-weight:500}
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/7cba1811e3c25a15-s.p.woff2') format('woff2');font-weight:700}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav-links"><a href="../index.html">Home</a><a href="../index.html#projects" class="active">Projects</a><a href="../index.html#contact">Contact</a></nav>
+  <div class="header-right"><div class="theme-toggle" id="themeToggle"><div class="ball"></div></div></div>
+</header>
+
+<main>
+  <section class="project-hero visible">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#projects">Projects</a> / Diabetes Prevention</div>
+    <h1>Diabetes Risk Predictor</h1>
+    <div class="oneliner">1 in 10 Americans has diabetes. What if we could predict it earlier?</div>
+    <div class="meta-row">
+      <span class="tag">Healthcare ML</span>
+      <span class="tag">Python</span>
+      <span class="tag">R</span>
+      <span class="tag">scikit-learn</span>
+    </div>
+    <div class="cta-row">
+      <a href="https://github.com/karthik1636/Portfolio/tree/main/Projects/Diabetes%20Prevention" target="_blank" class="btn-primary">View on GitHub</a>
+    </div>
+  </section>
+
+  <section class="story-section visible">
+    <h2>The <span class="ac">Problem</span></h2>
+    <p>Diabetes affects <strong>37 million Americans</strong> and costs the healthcare system $327 billion annually. The tragedy is that Type 2 diabetes is often preventable &mdash; if caught early. But current screening relies on patients showing symptoms, which means many are diagnosed too late for lifestyle interventions to be effective.</p>
+    <p>The question: <em>Can we use readily available patient data (BMI, blood pressure, age, family history) to flag at-risk individuals before symptoms appear?</em></p>
+  </section>
+
+  <section class="story-section visible">
+    <h2>The <span class="ac">Approach</span></h2>
+    <div class="pipeline-diagram">
+      <div class="pipeline-steps">
+        <div class="pipeline-step">
+          <div class="icon">&#128202;</div>
+          <div class="step-label">EDA</div>
+          <div class="step-detail">Feature analysis</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#128295;</div>
+          <div class="step-label">Engineer</div>
+          <div class="step-detail">Clinical features</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#129520;</div>
+          <div class="step-label">Model</div>
+          <div class="step-detail">LR + RF + XGB</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#128161;</div>
+          <div class="step-label">Interpret</div>
+          <div class="step-detail">Feature importance</div>
+        </div>
+      </div>
+    </div>
+    <ul>
+      <li><strong>Exploratory Analysis:</strong> Identified key risk correlations &mdash; glucose levels, BMI, and age emerged as strongest predictors, confirming clinical literature</li>
+      <li><strong>Feature Engineering:</strong> Created interaction terms (BMI &times; age, glucose &times; insulin) and handled missing data patterns common in clinical datasets</li>
+      <li><strong>Model Comparison:</strong> Trained logistic regression, random forest, and gradient boosting; evaluated on accuracy, sensitivity (catching true positives), and AUC-ROC</li>
+      <li><strong>Interpretability:</strong> Generated feature importance rankings and partial dependence plots so clinicians can understand and trust the predictions</li>
+    </ul>
+  </section>
+
+  <section class="story-section visible">
+    <h2>Key <span class="ac">Results</span></h2>
+    <div class="metrics-row">
+      <div class="metric-box"><div class="val">85%</div><div class="lbl">Accuracy</div></div>
+      <div class="metric-box"><div class="val">3</div><div class="lbl">Models Compared</div></div>
+      <div class="metric-box"><div class="val">High</div><div class="lbl">Sensitivity</div></div>
+    </div>
+    <ul>
+      <li>85% classification accuracy with random forest as best performer</li>
+      <li>Optimized for <strong>high sensitivity</strong> (minimizing false negatives) because missing a diabetic patient is far worse than a false alarm</li>
+      <li>Glucose level, BMI, and age confirmed as top 3 predictors &mdash; aligning with medical research</li>
+      <li>Feature importance analysis provides actionable insights for preventive care programs</li>
+    </ul>
+  </section>
+
+  <div class="biz-callout">
+    <h3>Business Value</h3>
+    <p><strong>Healthcare Cost Reduction:</strong> Early intervention for pre-diabetic patients saves an estimated $3,000&ndash;$5,000 per patient per year in avoided complications. <strong>Screening Scale:</strong> An automated risk model can screen thousands of patients per hour vs. manual clinical assessment. <strong>Explainability:</strong> Feature importance analysis means clinicians trust and adopt the tool.</p>
+  </div>
+
+  <section class="story-section visible">
+    <h2>Tech <span class="ac">Stack</span></h2>
+    <div class="tech-grid">
+      <span class="tech-chip">Python</span>
+      <span class="tech-chip">R</span>
+      <span class="tech-chip">scikit-learn</span>
+      <span class="tech-chip">Pandas</span>
+      <span class="tech-chip">Matplotlib / Seaborn</span>
+      <span class="tech-chip">XGBoost</span>
+    </div>
+  </section>
+
+  <a href="../index.html#projects" class="back-link">&larr; Back to all projects</a>
+</main>
+<footer>&copy; 2026 Karthik Mettu</footer>
+<script>document.getElementById('themeToggle').addEventListener('click',()=>document.documentElement.classList.toggle('dark'))</script>
+</body>
+</html>

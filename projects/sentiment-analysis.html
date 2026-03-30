@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sentiment Analysis Engine — Transformer-based NLP classifier achieving 95% accuracy on large-scale social media data.">
+  <title>Sentiment Analysis Engine | Karthik Mettu</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/4473ecc91f70f139-s.p.woff') format('woff');font-weight:400}
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/463dafcda517f24f-s.p.woff') format('woff');font-weight:500}
+    @font-face{font-family:'SpaceGrotesk';src:url('../assets/Fonts/7cba1811e3c25a15-s.p.woff2') format('woff2');font-weight:700}
+  </style>
+</head>
+<body>
+<header>
+  <nav class="nav-links"><a href="../index.html">Home</a><a href="../index.html#projects" class="active">Projects</a><a href="../index.html#contact">Contact</a></nav>
+  <div class="header-right"><div class="theme-toggle" id="themeToggle"><div class="ball"></div></div></div>
+</header>
+
+<main>
+  <section class="project-hero visible">
+    <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../index.html#projects">Projects</a> / Sentiment Analysis</div>
+    <h1>Sentiment Analysis Engine</h1>
+    <div class="oneliner">What do millions of people actually feel? Let the data tell you.</div>
+    <div class="meta-row">
+      <span class="tag">NLP</span>
+      <span class="tag">Transformers</span>
+      <span class="tag">TensorFlow</span>
+      <span class="tag">Python</span>
+    </div>
+    <div class="cta-row">
+      <a href="https://github.com/karthik1636/Portfolio/tree/main/Projects/Sentiment%20Analysis" target="_blank" class="btn-primary">View on GitHub</a>
+    </div>
+  </section>
+
+  <section class="story-section visible">
+    <h2>The <span class="ac">Problem</span></h2>
+    <p>Every day, millions of people share opinions online &mdash; about products, politics, experiences. Companies spend billions trying to understand this firehose of unstructured text. Traditional keyword-based approaches miss sarcasm, context, and nuance. A tweet saying "Oh great, another update that breaks everything" reads as positive if you just count "great."</p>
+    <p>The challenge: <em>Build a classifier that understands what people actually mean, not just what they literally say.</em></p>
+  </section>
+
+  <section class="story-section visible">
+    <h2>The <span class="ac">Approach</span></h2>
+    <div class="pipeline-diagram">
+      <div class="pipeline-steps">
+        <div class="pipeline-step">
+          <div class="icon">&#128172;</div>
+          <div class="step-label">Collect</div>
+          <div class="step-detail">Social media data</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#128295;</div>
+          <div class="step-label">Preprocess</div>
+          <div class="step-detail">Tokenize + clean</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#129504;</div>
+          <div class="step-label">Fine-Tune</div>
+          <div class="step-detail">Transformer model</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step">
+          <div class="icon">&#127919;</div>
+          <div class="step-label">Evaluate</div>
+          <div class="step-detail">95% accuracy</div>
+        </div>
+      </div>
+    </div>
+    <ul>
+      <li><strong>Data Collection:</strong> Large-scale social media dataset with diverse opinion types, sarcasm, and mixed sentiment</li>
+      <li><strong>Preprocessing:</strong> Custom tokenization pipeline handling hashtags, mentions, emojis, and slang normalization</li>
+      <li><strong>Model Architecture:</strong> Fine-tuned transformer-based architecture that captures long-range dependencies and contextual meaning</li>
+      <li><strong>Evaluation:</strong> Rigorous train/val/test split with confusion matrix analysis, per-class precision/recall, and error analysis on failure cases</li>
+    </ul>
+  </section>
+
+  <section class="story-section visible">
+    <h2>Key <span class="ac">Results</span></h2>
+    <div class="metrics-row">
+      <div class="metric-box"><div class="val">95%</div><div class="lbl">Accuracy</div></div>
+      <div class="metric-box"><div class="val">3</div><div class="lbl">Sentiment Classes</div></div>
+      <div class="metric-box"><div class="val">Large</div><div class="lbl">Scale Dataset</div></div>
+    </div>
+    <ul>
+      <li>95% classification accuracy on held-out test set, significantly outperforming bag-of-words baselines</li>
+      <li>Strong performance on sarcasm and mixed-sentiment cases where traditional methods fail</li>
+      <li>Confusion matrix analysis revealed most errors occur at the positive/neutral boundary &mdash; a known hard problem</li>
+      <li>Model handles out-of-vocabulary slang and new expressions through subword tokenization</li>
+    </ul>
+  </section>
+
+  <div class="biz-callout">
+    <h3>Business Value</h3>
+    <p><strong>Brand Monitoring:</strong> Companies like Sprout Social and Brandwatch charge $1K+/month for sentiment analysis. This project implements the same core capability from scratch. <strong>Customer Feedback:</strong> Automatically routing negative sentiment to support teams reduces churn. <strong>Market Intelligence:</strong> Real-time sentiment on product launches enables rapid iteration.</p>
+  </div>
+
+  <section class="story-section visible">
+    <h2>Tech <span class="ac">Stack</span></h2>
+    <div class="tech-grid">
+      <span class="tech-chip">Python</span>
+      <span class="tech-chip">TensorFlow</span>
+      <span class="tech-chip">Hugging Face Transformers</span>
+      <span class="tech-chip">NLTK</span>
+      <span class="tech-chip">Pandas</span>
+      <span class="tech-chip">Matplotlib</span>
+      <span class="tech-chip">scikit-learn</span>
+    </div>
+  </section>
+
+  <a href="../index.html#projects" class="back-link">&larr; Back to all projects</a>
+</main>
+<footer>&copy; 2026 Karthik Mettu</footer>
+<script>document.getElementById('themeToggle').addEventListener('click',()=>document.documentElement.classList.toggle('dark'))</script>
+</body>
+</html>

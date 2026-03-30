@@ -3,134 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Karthik Mettu — Data Scientist specializing in ML systems, Generative AI, NLP, and forecasting at scale. PayPal, Accenture.">
+  <meta name="description" content="Karthik Mettu — Data Scientist. Production ML systems at PayPal and Accenture. Fraud detection, demand forecasting, Gen AI, NLP.">
   <meta name="theme-color" content="#0af">
   <title>Karthik Mettu | Data Scientist</title>
   <link rel="preload" href="assets/Fonts/4473ecc91f70f139-s.p.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="assets/Fonts/463dafcda517f24f-s.p.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="assets/Fonts/7cba1811e3c25a15-s.p.woff2" as="font" type="font/woff2" crossorigin>
-  <style>
-    @font-face{font-family:'SpaceGrotesk';src:url('assets/Fonts/4473ecc91f70f139-s.p.woff') format('woff');font-weight:400}
-    @font-face{font-family:'SpaceGrotesk';src:url('assets/Fonts/463dafcda517f24f-s.p.woff') format('woff');font-weight:500}
-    @font-face{font-family:'SpaceGrotesk';src:url('assets/Fonts/7cba1811e3c25a15-s.p.woff2') format('woff2');font-weight:700}
-    :root{--bg:#fff;--bg2:#f5f5f5;--card:#efefef;--tx:#111;--tx2:#444;--tx3:#777;--ac:#0af;--acd:rgba(0,170,255,.12);--hd:rgba(255,255,255,.85);--sh:0 4px 15px rgba(0,0,0,.08);--shH:0 10px 30px rgba(0,0,0,.12);--bd:rgba(0,0,0,.06)}
-    .dark{--bg:#0a0a0a;--bg2:#111;--card:#161616;--tx:#eee;--tx2:#bbb;--tx3:#666;--ac:#0af;--acd:rgba(0,170,255,.1);--hd:rgba(10,10,10,.9);--sh:0 4px 15px rgba(0,0,0,.4);--shH:0 10px 30px rgba(0,0,0,.6);--bd:rgba(255,255,255,.06)}
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{font-family:'SpaceGrotesk',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.6;transition:background .4s,color .4s}
-    header{position:fixed;top:0;left:0;right:0;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:var(--hd);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);z-index:1000}
-    .nav-links{display:flex;gap:1.5rem}
-    .nav-links a{color:var(--tx3);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.02em;padding:.25rem 0;border-bottom:2px solid transparent;transition:color .3s,border-color .3s}
-    .nav-links a:hover,.nav-links a.active{color:var(--ac);border-bottom-color:var(--ac)}
-    .header-right{display:flex;align-items:center;gap:1rem}
-    .theme-toggle{width:44px;height:24px;border-radius:12px;background:var(--bg2);border:1px solid var(--tx3);cursor:pointer;position:relative;transition:background .3s}
-    .theme-toggle .ball{position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:var(--ac);transition:transform .4s cubic-bezier(.175,.885,.32,1.275)}
-    .dark .theme-toggle .ball{transform:translateX(20px)}
-    .mobile-menu-btn{display:none;cursor:pointer;width:28px;height:20px;position:relative}
-    .mobile-menu-btn span{display:block;position:absolute;height:2px;width:100%;background:var(--tx);border-radius:2px;transition:.25s ease-in-out}
-    .mobile-menu-btn span:nth-child(1){top:0}.mobile-menu-btn span:nth-child(2){top:8px}.mobile-menu-btn span:nth-child(3){top:16px}
-    .mobile-menu-btn.active span:nth-child(1){top:8px;transform:rotate(135deg)}.mobile-menu-btn.active span:nth-child(2){opacity:0}.mobile-menu-btn.active span:nth-child(3){top:8px;transform:rotate(-135deg)}
-    main{max-width:960px;margin:0 auto;padding:0 2rem}
-    section{padding:6rem 0 4rem;opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-    section.visible{opacity:1;transform:translateY(0)}
-    h2{font-size:1.75rem;font-weight:700;margin-bottom:2rem;color:var(--tx)}
-    h2 .ac{color:var(--ac)}
-
-    /* Hero */
-    #hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:56px;position:relative;overflow:hidden}
-    #heroCanvas{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
-    #hero>*:not(canvas){position:relative;z-index:1}
-    .hero-label{display:inline-block;font-size:.8rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ac);margin-bottom:1rem}
-    #hero h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:700;line-height:1.15;margin-bottom:.5rem}
-    .typing-line{font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--ac);font-weight:500;height:2rem;margin-bottom:1.25rem}
-    .typing-line .cursor{display:inline-block;width:2px;height:1.2em;background:var(--ac);margin-left:2px;vertical-align:text-bottom;animation:blink .7s infinite}
-    @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-    .hero-sub{font-size:1.05rem;color:var(--tx2);max-width:600px;margin-bottom:2rem}
-    .hero-links{display:flex;gap:.75rem;flex-wrap:wrap}
-    .hero-links a{display:inline-flex;align-items:center;gap:.4rem;padding:.6rem 1.2rem;border-radius:6px;font-size:.85rem;font-weight:500;text-decoration:none;transition:transform .2s,box-shadow .2s}
-    .hero-links a:hover{transform:translateY(-2px)}
-    .btn-primary{background:var(--ac);color:#fff;box-shadow:0 4px 14px rgba(0,170,255,.3)}
-    .btn-secondary{background:var(--bg2);color:var(--tx);border:1px solid var(--bd)}
-
-    /* Stats */
-    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
-    .stat-card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:1.5rem;text-align:center;transition:transform .3s,box-shadow .3s}
-    .stat-card:hover{transform:translateY(-4px);box-shadow:var(--shH)}
-    .stat-num{font-size:2.2rem;font-weight:700;color:var(--ac);line-height:1.2}
-    .stat-label{font-size:.8rem;color:var(--tx3);margin-top:.25rem;text-transform:uppercase;letter-spacing:.06em}
-
-    /* Timeline */
-    .timeline{position:relative;padding-left:2rem}
-    .timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--bd)}
-    .timeline-item{position:relative;margin-bottom:2.5rem;padding:1.5rem;background:var(--card);border:1px solid var(--bd);border-radius:10px;transition:transform .3s,box-shadow .3s}
-    .timeline-item:hover{transform:translateX(4px);box-shadow:var(--shH)}
-    .timeline-item::before{content:'';position:absolute;left:-2.45rem;top:1.8rem;width:10px;height:10px;border-radius:50%;background:var(--ac);border:2px solid var(--bg)}
-    .timeline-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.75rem;flex-wrap:wrap;gap:.5rem}
-    .timeline-header h3{font-size:1.05rem;font-weight:600}
-    .timeline-header .period{font-size:.78rem;color:var(--tx3);white-space:nowrap}
-    .timeline-company{font-size:.85rem;color:var(--ac);font-weight:500;margin-bottom:.5rem}
-    .timeline-item ul{list-style:none;padding:0}
-    .timeline-item li{position:relative;padding-left:1rem;margin-bottom:.4rem;font-size:.88rem;color:var(--tx2)}
-    .timeline-item li::before{content:'';position:absolute;left:0;top:.55rem;width:5px;height:5px;border-radius:50%;background:var(--ac)}
-    .tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.75rem}
-    .tags span{font-size:.7rem;padding:.2rem .55rem;background:var(--acd);color:var(--ac);border-radius:4px;font-weight:500}
-
-    /* Projects */
-    .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
-    .project-card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:1.5rem;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
-    .project-card:hover{transform:translateY(-4px);box-shadow:var(--shH)}
-    .project-card.flagship{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac),var(--sh)}
-    .project-card h3{font-size:1rem;font-weight:600;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem}
-    .project-card h3 a{color:var(--tx);text-decoration:none}
-    .project-card h3 a:hover{color:var(--ac)}
-    .badge-flagship{font-size:.6rem;padding:.15rem .45rem;background:var(--ac);color:#fff;border-radius:3px;font-weight:600;text-transform:uppercase;letter-spacing:.05em}
-    .project-card p{font-size:.85rem;color:var(--tx2);flex:1;margin-bottom:.75rem}
-    .project-link{display:inline-flex;align-items:center;gap:.3rem;font-size:.78rem;color:var(--ac);text-decoration:none;font-weight:500;margin-top:auto}
-    .project-link:hover{text-decoration:underline}
-
-    /* Education */
-    .edu-card{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:2rem}
-    .edu-card h3{font-size:1.1rem;font-weight:600;margin-bottom:.25rem}
-    .edu-meta{font-size:.85rem;color:var(--tx3);margin-bottom:1rem}
-    .coursework{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.5rem}
-    .coursework span{font-size:.82rem;color:var(--tx2);padding:.4rem .7rem;background:var(--acd);border-radius:5px}
-
-    /* Skills */
-    .skills-section{display:grid;grid-template-columns:1fr 280px;gap:3rem;align-items:start}
-    .skill-categories{}
-    .skill-cat{margin-bottom:1.5rem}
-    .skill-cat h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);margin-bottom:.5rem}
-    .skill-cat .badges{display:flex;flex-wrap:wrap;gap:.4rem}
-    .skill-badge{font-size:.78rem;font-weight:500;padding:.35rem .75rem;background:var(--card);border:1px solid var(--bd);border-radius:6px;color:var(--tx2);transition:border-color .2s,color .2s}
-    .skill-badge:hover{border-color:var(--ac);color:var(--ac)}
-    #radarCanvas{width:280px;height:280px;display:block}
-
-    /* Contact */
-    .contact-grid{display:flex;gap:1rem;flex-wrap:wrap}
-    .contact-grid a{display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1.25rem;background:var(--card);border:1px solid var(--bd);border-radius:8px;color:var(--tx);text-decoration:none;font-size:.88rem;font-weight:500;transition:border-color .2s,transform .2s}
-    .contact-grid a:hover{border-color:var(--ac);transform:translateY(-2px)}
-    .contact-grid svg{width:18px;height:18px;color:var(--ac)}
-
-    footer{text-align:center;padding:2rem;font-size:.75rem;color:var(--tx3);border-top:1px solid var(--bd);margin-top:2rem}
-
-    .mobile-nav{display:none;position:fixed;top:56px;left:0;right:0;bottom:0;background:var(--bg);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
-    .mobile-nav.active{display:flex}
-    .mobile-nav a{font-size:1.2rem;color:var(--tx);text-decoration:none;font-weight:500}
-
-    @media(max-width:768px){
-      header{padding:0 1rem}.nav-links{display:none}.mobile-menu-btn{display:block}
-      main{padding:0 1rem}section{padding:4rem 0 2rem}#hero h1{font-size:2rem}
-      .stats-grid{grid-template-columns:repeat(2,1fr);gap:1rem}
-      .timeline{padding-left:1.5rem}.projects-grid{grid-template-columns:1fr}
-      .coursework{grid-template-columns:1fr}
-      .skills-section{grid-template-columns:1fr}
-      #radarCanvas{margin:0 auto 1.5rem}
-    }
-    @media(max-width:480px){
-      .stats-grid{grid-template-columns:1fr}
-      .hero-links{flex-direction:column}.hero-links a{justify-content:center}
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -157,7 +36,7 @@
 
 <main>
 
-  <!-- HERO -->
+  <!-- ─── HERO ─── -->
   <section id="hero" class="visible">
     <canvas id="heroCanvas"></canvas>
     <span class="hero-label">Data Scientist &amp; ML Engineer</span>
@@ -184,7 +63,7 @@
     </div>
   </section>
 
-  <!-- STATS -->
+  <!-- ─── STATS ─── -->
   <section id="stats">
     <h2>By The <span class="ac">Numbers</span></h2>
     <div class="stats-grid">
@@ -195,7 +74,7 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- ─── EXPERIENCE ─── -->
   <section id="experience">
     <h2>Professional <span class="ac">Experience</span></h2>
     <div class="timeline">
@@ -236,56 +115,107 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- ─── PROJECTS ─── -->
   <section id="projects">
     <h2>Featured <span class="ac">Projects</span></h2>
+    <p style="font-size:.92rem;color:var(--tx2);margin-bottom:2rem;max-width:650px">Each project tells a story &mdash; click any card to read the full case study with problem, approach, results, and business value.</p>
     <div class="projects-grid">
-      <div class="project-card flagship">
-        <h3><a href="https://github.com/karthik1636/audiobook-pipeline" target="_blank">Audiobook Pipeline</a><span class="badge-flagship">Flagship</span></h3>
-        <p>PDF to emotionally narrated audiobook &mdash; 4-stage NLP+TTS pipeline with sentence-level emotion classification, Kokoro-82M voice blending, and Karpathy-style autoresearch optimization.</p>
+
+      <!-- 1 — Audiobook Pipeline -->
+      <a href="projects/audiobook-pipeline.html" class="project-card flagship">
+        <h3>Audiobook Pipeline <span class="badge-flagship">Flagship</span></h3>
+        <div class="project-oneliner">"PDF in, emotionally narrated audiobook out."</div>
+        <div class="metric-highlight"><span class="num">4</span>-stage NLP + TTS pipeline</div>
+        <p>Emotion-aware text-to-speech with sentence-level sentiment, Kokoro-82M voice blending, and Karpathy-style autoresearch optimization. Shipped with Streamlit demo.</p>
         <div class="tags"><span>PyTorch</span><span>Kokoro-82M</span><span>Ollama</span><span>NLP</span><span>Streamlit</span></div>
-        <a href="https://github.com/karthik1636/audiobook-pipeline" target="_blank" class="project-link">View on GitHub &rarr;</a>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/karthik1636/movie-recommender-system" target="_blank">Movie Recommender System</a></h3>
-        <p>Content-based and collaborative filtering recommendation engine with interactive Streamlit web interface for personalized movie suggestions.</p>
+        <div class="project-card-footer">
+          <span class="badge-status badge-shipped">Shipped</span>
+          <span class="project-link">Read Case Study &rarr;</span>
+        </div>
+      </a>
+
+      <!-- 2 — Movie Recommender -->
+      <a href="projects/movie-recommender.html" class="project-card">
+        <h3>Movie Recommender System</h3>
+        <div class="project-oneliner">"Binge Netflix? Build your own algorithm."</div>
+        <div class="metric-highlight">Content + Collaborative filtering</div>
+        <p>Dual-approach recommendation engine combining content-based similarity with collaborative filtering, deployed as an interactive Streamlit web app.</p>
         <div class="tags"><span>Python</span><span>scikit-learn</span><span>Streamlit</span></div>
-        <a href="https://github.com/karthik1636/movie-recommender-system" target="_blank" class="project-link">View on GitHub &rarr;</a>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/karthik1636/Portfolio/tree/main/Projects/Sentiment%20Analysis" target="_blank">Sentiment Analysis</a></h3>
-        <p>NLP sentiment classifier using transformer-based models achieving 95% accuracy on large-scale social media data.</p>
-        <div class="tags"><span>Python</span><span>Transformers</span><span>NLP</span><span>TensorFlow</span></div>
-        <a href="https://github.com/karthik1636/Portfolio/tree/main/Projects/Sentiment%20Analysis" target="_blank" class="project-link">View on GitHub &rarr;</a>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/karthik1636/Portfolio/tree/main/Projects/Diabetes%20Prevention" target="_blank">Diabetes Prevention</a></h3>
-        <p>Predictive model for diabetes risk assessment using logistic regression and random forest, achieving 85% accuracy for early detection.</p>
+        <div class="project-card-footer">
+          <span class="badge-status badge-demo">Live Demo</span>
+          <span class="project-link">Read Case Study &rarr;</span>
+        </div>
+      </a>
+
+      <!-- 3 — Sentiment Analysis -->
+      <a href="projects/sentiment-analysis.html" class="project-card">
+        <h3>Sentiment Analysis Engine</h3>
+        <div class="project-oneliner">"What do millions of people actually feel?"</div>
+        <div class="metric-highlight"><span class="num">95%</span> classification accuracy</div>
+        <p>Transformer-based NLP classifier achieving 95% accuracy on large-scale social media data. Fine-tuned for nuanced sentiment detection beyond pos/neg/neutral.</p>
+        <div class="tags"><span>Transformers</span><span>TensorFlow</span><span>NLP</span><span>Python</span></div>
+        <div class="project-card-footer">
+          <span class="badge-status badge-shipped">Shipped</span>
+          <span class="project-link">Read Case Study &rarr;</span>
+        </div>
+      </a>
+
+      <!-- 4 — Diabetes Prevention -->
+      <a href="projects/diabetes-prevention.html" class="project-card">
+        <h3>Diabetes Risk Predictor</h3>
+        <div class="project-oneliner">"1 in 10 Americans. What if we predicted it earlier?"</div>
+        <div class="metric-highlight"><span class="num">85%</span> early detection accuracy</div>
+        <p>ML-powered risk assessment for diabetes using logistic regression, random forest, and clinical feature engineering for early intervention.</p>
         <div class="tags"><span>Python</span><span>R</span><span>scikit-learn</span><span>Healthcare</span></div>
-        <a href="https://github.com/karthik1636/Portfolio/tree/main/Projects/Diabetes%20Prevention" target="_blank" class="project-link">View on GitHub &rarr;</a>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/karthik1636/Portfolio/tree/main/Projects/Multivariate%20Analysis" target="_blank">Multivariate Analysis</a></h3>
-        <p>Statistical modeling of complex data relationships using PCA, factor analysis, and cluster analysis for pattern detection.</p>
-        <div class="tags"><span>R</span><span>PCA</span><span>Statistics</span></div>
-        <a href="https://github.com/karthik1636/Portfolio/tree/main/Projects/Multivariate%20Analysis" target="_blank" class="project-link">View on GitHub &rarr;</a>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/karthik1636/Portfolio/tree/main/Projects/Visualization%20Project" target="_blank">Visualization Project</a></h3>
-        <p>Interactive dashboards and data storytelling for business insights using Tableau, Power BI, and Python visualization libraries.</p>
-        <div class="tags"><span>Tableau</span><span>Power BI</span><span>Python</span></div>
-        <a href="https://github.com/karthik1636/Portfolio/tree/main/Projects/Visualization%20Project" target="_blank" class="project-link">View on GitHub &rarr;</a>
-      </div>
-      <div class="project-card">
-        <h3><a href="https://github.com/karthik1636/Portfolio" target="_blank">Suicide Rate Forecasting</a></h3>
-        <p>Time-series forecasting with ARIMA and Prophet models (R&sup2;=0.85) for public health intervention planning and resource allocation.</p>
-        <div class="tags"><span>Prophet</span><span>ARIMA</span><span>Time Series</span></div>
-        <a href="https://github.com/karthik1636/Portfolio" target="_blank" class="project-link">View on GitHub &rarr;</a>
-      </div>
+        <div class="project-card-footer">
+          <span class="badge-status badge-shipped">Shipped</span>
+          <span class="project-link">Read Case Study &rarr;</span>
+        </div>
+      </a>
+
+      <!-- 5 — Multivariate Analysis -->
+      <a href="projects/multivariate-analysis.html" class="project-card">
+        <h3>Multivariate Statistical Analysis</h3>
+        <div class="project-oneliner">"50 dimensions. Where's the signal?"</div>
+        <div class="metric-highlight">PCA + Factor + Cluster analysis</div>
+        <p>Applied PCA, factor analysis, and clustering to high-dimensional datasets, reducing noise and uncovering hidden structure for downstream ML pipelines.</p>
+        <div class="tags"><span>R</span><span>PCA</span><span>Factor Analysis</span><span>Statistics</span></div>
+        <div class="project-card-footer">
+          <span class="badge-status badge-shipped">Shipped</span>
+          <span class="project-link">Read Case Study &rarr;</span>
+        </div>
+      </a>
+
+      <!-- 6 — Visualization Project -->
+      <a href="projects/visualization-project.html" class="project-card">
+        <h3>Data Storytelling Dashboards</h3>
+        <div class="project-oneliner">"A great model is useless if nobody understands it."</div>
+        <div class="metric-highlight">Interactive + Multi-platform</div>
+        <p>Interactive dashboards and data storytelling across Tableau, Power BI, and Python, translating complex analytics into stakeholder-friendly narratives.</p>
+        <div class="tags"><span>Tableau</span><span>Power BI</span><span>Python</span><span>D3.js</span></div>
+        <div class="project-card-footer">
+          <span class="badge-status badge-shipped">Shipped</span>
+          <span class="project-link">Read Case Study &rarr;</span>
+        </div>
+      </a>
+
+      <!-- 7 — Suicide Rate Forecasting -->
+      <a href="projects/suicide-rate-forecasting.html" class="project-card">
+        <h3>Suicide Rate Forecasting</h3>
+        <div class="project-oneliner">"Public health needs data, not guesswork."</div>
+        <div class="metric-highlight">R&sup2; = <span class="num">0.85</span></div>
+        <p>Time-series forecasting with ARIMA and Prophet for public health resource allocation, delivering reliable multi-year projections for intervention planning.</p>
+        <div class="tags"><span>Prophet</span><span>ARIMA</span><span>Time Series</span><span>R</span></div>
+        <div class="project-card-footer">
+          <span class="badge-status badge-shipped">Shipped</span>
+          <span class="project-link">Read Case Study &rarr;</span>
+        </div>
+      </a>
+
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- ─── SKILLS ─── -->
   <section id="skills">
     <h2>Technical <span class="ac">Skills</span></h2>
     <div class="skills-section">
@@ -319,28 +249,32 @@
     </div>
   </section>
 
-  <!-- EDUCATION -->
+  <!-- ─── EDUCATION ─── -->
   <section id="education">
     <h2><span class="ac">Education</span></h2>
     <div class="edu-card">
       <h3>MS in Statistics &amp; Data Science</h3>
       <div class="edu-meta">University of Houston &nbsp;|&nbsp; GPA: 3.74 / 4.0 &nbsp;|&nbsp; Aug 2023 &ndash; Dec 2024</div>
+      <p style="font-size:.88rem;color:var(--tx2);margin-bottom:1rem">30 credit-hour program covering the full data science stack &mdash; from statistical theory through deep learning to production analytics.</p>
       <div class="coursework">
-        <span>Deep Learning &amp; Neural Networks</span>
-        <span>Big Data Analytics</span>
-        <span>Statistical Learning &amp; Data Mining</span>
-        <span>Probability Models &amp; Computing</span>
-        <span>Information Visualization</span>
-        <span>Linear Models &amp; Experiments</span>
-        <span>Applied Statistics &amp; Multivariate</span>
-        <span>Case Studies in Data Science</span>
+        <span>MATH 6373 &mdash; Deep Learning &amp; Neural Networks</span>
+        <span>MATH 6386 &mdash; Big Data Analytics</span>
+        <span>MATH 6350 &mdash; Statistical Learning &amp; Data Mining</span>
+        <span>MATH 6358 &mdash; Probability Models &amp; Computing</span>
+        <span>MATH 6381 &mdash; Information Visualization</span>
+        <span>MATH 6357 &mdash; Linear Models &amp; Experiments</span>
+        <span>MATH 6359 &mdash; Applied Statistics &amp; Multivariate</span>
+        <span>MATH 6380 &mdash; Programming for Data Analytics</span>
+        <span>Case Studies in Data Science (Elective)</span>
+        <span>MATH 6315 &mdash; Internship / Masters Tutorial</span>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ─── CONTACT ─── -->
   <section id="contact">
     <h2>Get In <span class="ac">Touch</span></h2>
+    <p style="font-size:.92rem;color:var(--tx2);margin-bottom:1.5rem;max-width:500px">Open to Data Scientist, ML Engineer, and Applied Scientist roles across the US. Let's talk.</p>
     <div class="contact-grid">
       <a href="mailto:karthikrm202002@gmail.com">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -358,31 +292,24 @@
   </section>
 
 </main>
-<footer>&copy; 2026 Karthik Mettu</footer>
+<footer>&copy; 2026 Karthik Mettu &mdash; Built with vanilla HTML, CSS &amp; JS. No frameworks, no dependencies.</footer>
 
 <script>
-// ── Theme toggle ──
 document.getElementById('themeToggle').addEventListener('click',()=>document.documentElement.classList.toggle('dark'));
-
-// ── Mobile menu ──
 const menuBtn=document.getElementById('menuBtn'),mobileNav=document.getElementById('mobileNav');
 menuBtn.addEventListener('click',()=>{menuBtn.classList.toggle('active');mobileNav.classList.toggle('active')});
 mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menuBtn.classList.remove('active');mobileNav.classList.remove('active')}));
 
-// ── Section reveal ──
 const sections=document.querySelectorAll('section');
 const revealObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});
 sections.forEach(s=>{if(s.id!=='hero')revealObs.observe(s)});
 
-// ── Active nav ──
 const navLinks=document.querySelectorAll('.nav-links a');
 const navObs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){navLinks.forEach(l=>l.classList.remove('active'));const a=document.querySelector(`.nav-links a[href="#${e.target.id}"]`);if(a)a.classList.add('active')}}),{threshold:.25});
 sections.forEach(s=>navObs.observe(s));
 
-// ── Smooth scroll ──
 document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-70,behavior:'smooth'})}}));
 
-// ── Typing animation ──
 (function(){
   const phrases=["Data Scientist","ML Engineer","Gen AI Builder","Forecasting Expert","NLP Specialist"];
   const el=document.getElementById('typed');
@@ -398,34 +325,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
   tick();
 })();
 
-// ── Animated counters ──
 (function(){
   const nums=document.querySelectorAll('.stat-num[data-count]');
   let fired=false;
-  const obs=new IntersectionObserver(es=>{
-    if(fired)return;
-    es.forEach(e=>{
-      if(e.isIntersecting){
-        fired=true;
-        nums.forEach(n=>{
-          const target=+n.dataset.count,prefix=n.dataset.prefix||'',suffix=n.dataset.suffix||'';
-          let current=0;
-          const step=target/40;
-          (function count(){
-            current+=step;
-            if(current>=target){n.textContent=prefix+target+suffix;return}
-            n.textContent=prefix+Math.ceil(current)+suffix;
-            requestAnimationFrame(count);
-          })();
-        });
-        obs.disconnect();
-      }
-    });
-  },{threshold:.4});
+  const obs=new IntersectionObserver(es=>{if(fired)return;es.forEach(e=>{if(e.isIntersecting){fired=true;nums.forEach(n=>{const target=+n.dataset.count,prefix=n.dataset.prefix||'',suffix=n.dataset.suffix||'';let current=0;const step=target/40;(function count(){current+=step;if(current>=target){n.textContent=prefix+target+suffix;return}n.textContent=prefix+Math.ceil(current)+suffix;requestAnimationFrame(count)})()});obs.disconnect()}})},{threshold:.4});
   nums.forEach(n=>obs.observe(n));
 })();
 
-// ── Particle network background ──
 (function(){
   const canvas=document.getElementById('heroCanvas'),ctx=canvas.getContext('2d');
   let w,h,particles=[];
@@ -436,96 +342,30 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',
   function draw(){
     ctx.clearRect(0,0,w,h);
     const ac=getComputedStyle(document.documentElement).getPropertyValue('--ac').trim()||'#0af';
-    for(let i=0;i<N;i++){
-      const p=particles[i];
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0||p.x>w)p.vx*=-1;
-      if(p.y<0||p.y>h)p.vy*=-1;
-      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=ac;ctx.globalAlpha=.35;ctx.fill();
-      for(let j=i+1;j<N;j++){
-        const q=particles[j],dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);
-        if(dist<120){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=ac;ctx.globalAlpha=.08*(1-dist/120);ctx.stroke()}
-      }
-    }
-    ctx.globalAlpha=1;
-    requestAnimationFrame(draw);
+    for(let i=0;i<N;i++){const p=particles[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>w)p.vx*=-1;if(p.y<0||p.y>h)p.vy*=-1;ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=ac;ctx.globalAlpha=.35;ctx.fill();for(let j=i+1;j<N;j++){const q=particles[j],dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<120){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=ac;ctx.globalAlpha=.08*(1-dist/120);ctx.stroke()}}}
+    ctx.globalAlpha=1;requestAnimationFrame(draw);
   }
   draw();
 })();
 
-// ── Radar chart ──
 (function(){
   const canvas=document.getElementById('radarCanvas'),ctx=canvas.getContext('2d');
   const labels=["ML / AI","NLP","Data Eng","Cloud","Viz","Statistics"];
   const values=[.92,.88,.85,.80,.78,.90];
   const cx=140,cy=140,R=110,n=labels.length;
-  let progress=0,animated=false;
-
+  let animated=false;
   function drawRadar(p){
     ctx.clearRect(0,0,280,280);
     const isDark=document.documentElement.classList.contains('dark');
     const gridColor=isDark?'rgba(255,255,255,.08)':'rgba(0,0,0,.06)';
     const textColor=isDark?'#bbb':'#444';
-    const ac='#0af';
-
-    for(let ring=1;ring<=4;ring++){
-      ctx.beginPath();
-      for(let i=0;i<=n;i++){
-        const angle=(Math.PI*2/n)*i-Math.PI/2;
-        const r=R*(ring/4);
-        const x=cx+r*Math.cos(angle),y=cy+r*Math.sin(angle);
-        i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
-      }
-      ctx.strokeStyle=gridColor;ctx.lineWidth=1;ctx.stroke();
-    }
-
-    for(let i=0;i<n;i++){
-      const angle=(Math.PI*2/n)*i-Math.PI/2;
-      ctx.beginPath();ctx.moveTo(cx,cy);
-      ctx.lineTo(cx+R*Math.cos(angle),cy+R*Math.sin(angle));
-      ctx.strokeStyle=gridColor;ctx.stroke();
-      const lx=cx+(R+18)*Math.cos(angle),ly=cy+(R+18)*Math.sin(angle);
-      ctx.fillStyle=textColor;ctx.font='500 11px SpaceGrotesk,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
-      ctx.fillText(labels[i],lx,ly);
-    }
-
-    ctx.beginPath();
-    for(let i=0;i<=n;i++){
-      const idx=i%n;
-      const angle=(Math.PI*2/n)*idx-Math.PI/2;
-      const r=R*values[idx]*p;
-      const x=cx+r*Math.cos(angle),y=cy+r*Math.sin(angle);
-      i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);
-    }
-    ctx.fillStyle='rgba(0,170,255,.15)';ctx.fill();
-    ctx.strokeStyle=ac;ctx.lineWidth=2;ctx.stroke();
-
-    for(let i=0;i<n;i++){
-      const angle=(Math.PI*2/n)*i-Math.PI/2;
-      const r=R*values[i]*p;
-      ctx.beginPath();ctx.arc(cx+r*Math.cos(angle),cy+r*Math.sin(angle),3,0,Math.PI*2);
-      ctx.fillStyle=ac;ctx.fill();
-    }
+    for(let ring=1;ring<=4;ring++){ctx.beginPath();for(let i=0;i<=n;i++){const angle=(Math.PI*2/n)*i-Math.PI/2;const r=R*(ring/4);const x=cx+r*Math.cos(angle),y=cy+r*Math.sin(angle);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)}ctx.strokeStyle=gridColor;ctx.lineWidth=1;ctx.stroke()}
+    for(let i=0;i<n;i++){const angle=(Math.PI*2/n)*i-Math.PI/2;ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+R*Math.cos(angle),cy+R*Math.sin(angle));ctx.strokeStyle=gridColor;ctx.stroke();const lx=cx+(R+18)*Math.cos(angle),ly=cy+(R+18)*Math.sin(angle);ctx.fillStyle=textColor;ctx.font='500 11px SpaceGrotesk,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(labels[i],lx,ly)}
+    ctx.beginPath();for(let i=0;i<=n;i++){const idx=i%n;const angle=(Math.PI*2/n)*idx-Math.PI/2;const r=R*values[idx]*p;const x=cx+r*Math.cos(angle),y=cy+r*Math.sin(angle);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y)}ctx.fillStyle='rgba(0,170,255,.15)';ctx.fill();ctx.strokeStyle='#0af';ctx.lineWidth=2;ctx.stroke();
+    for(let i=0;i<n;i++){const angle=(Math.PI*2/n)*i-Math.PI/2;const r=R*values[i]*p;ctx.beginPath();ctx.arc(cx+r*Math.cos(angle),cy+r*Math.sin(angle),3,0,Math.PI*2);ctx.fillStyle='#0af';ctx.fill()}
   }
-
-  const obs=new IntersectionObserver(es=>{
-    es.forEach(e=>{
-      if(e.isIntersecting&&!animated){
-        animated=true;
-        const start=performance.now();
-        (function animate(now){
-          progress=Math.min((now-start)/800,1);
-          const ease=1-Math.pow(1-progress,3);
-          drawRadar(ease);
-          if(progress<1)requestAnimationFrame(animate);
-        })(start);
-        obs.disconnect();
-      }
-    });
-  },{threshold:.3});
-  obs.observe(canvas);
-  drawRadar(0);
-
+  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!animated){animated=true;const start=performance.now();(function animate(now){const progress=Math.min((now-start)/800,1);drawRadar(1-Math.pow(1-progress,3));if(progress<1)requestAnimationFrame(animate)})(start);obs.disconnect()}})},{threshold:.3});
+  obs.observe(canvas);drawRadar(0);
   new MutationObserver(()=>{if(animated)drawRadar(1)}).observe(document.documentElement,{attributes:true,attributeFilter:['class']});
 })();
 </script>
